@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+    <style>
+        #myBox {
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="myBox"></div> 
+
+    <script>
+        const box = document.getElementById('myBox');
+
+        window.onload = function() {
+            box.style.transition = 'background-color 3s ease-in-out';
+            box.style.backgroundColor = 'pink'; 
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+body {
+    font-family: serif; 
+    padding: 20px; 
+}
+.section { 
+    border: 1px solid #ccc; 
+    background: #eee; 
+    width: 500px; 
+    margin-bottom: 10px; 
+}
+.header { 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 10px; 
+    align-items: center; 
+}
+.content { 
+    background: white; 
+    padding: 15px; 
+    border-top: 1px solid #ccc; 
+    color: #666; 
+}
+h2 { 
+    margin: 0; 
+    font-size: 24px; 
+}
+a { 
+    color: purple; 
+    cursor: pointer; 
+}
+    

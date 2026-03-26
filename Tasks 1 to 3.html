@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <style>
+        .btn1{
+            padding: 10px 20px;
+            margin: 5px;
+            border:  1px solid black;
+            background-color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        const breakLine1 = document.createElement('br');
+
+        //Task 1
+        const btn1 = document.createElement('button');
+        btn1.textContent = "Hello world!";
+        btn1.className = 'btn1';
+
+        btn1.addEventListener('mouseover', ()=>{
+            btn1.style.background='yellow';
+            btn1.style.fontWeight = 'bold';
+        });
+
+        btn1.addEventListener('mouseout', ()=>{
+            btn1.style.background='pink';
+            btn1.style.fontWeight = 'normal';
+        });
+
+        document.body.appendChild(btn1);
+        document.body.appendChild(breakLine1);
+
+        //Task 2
+        const div2 = document.createElement('div');
+
+        const dropDown = document.createElement('select');
+        dropDown.className='card';
+        
+        const flag1 = document.createElement('option');
+        flag1.value = 'Jordan';
+        flag1.textContent = "Jordan";
+
+        const flag2 = document.createElement('option');
+        flag2.value = 'Syria';
+        flag2.textContent = "Syria";
+
+        const flag3 = document.createElement('option');
+        flag3.value = 'Palestine';
+        flag3.textContent = "Palestine";
+
+        dropDown.appendChild(flag1);
+        dropDown.appendChild(flag2);
+        dropDown.appendChild(flag3);
+
+        const PicFlag = document.createElement('img');
+        PicFlag.src = 'jo.png';
+
+        const breakLine2 = document.createElement('br');
+        div2.addEventListener('change', (e)=>{
+            const selectedValue = e.target.value;
+            if (selectedValue == 'Jordan'){
+                PicFlag.src = 'jo.png';
+            }else if (selectedValue == 'Syria'){
+                PicFlag.src = 'sy.png';
+            }else if (selectedValue == 'Palestine'){
+                PicFlag.src = 'pl.png';
+            }
+        })
+
+
+        div2.appendChild(dropDown);
+        div2.appendChild(breakLine2);
+        div2.appendChild(PicFlag);
+
+        document.body.appendChild(div2);
+
+    </script>
+
+    <!-- Task 3 -->
+     <div class="section">
+        <div class="header">
+            <h2>What is lorem ipsum?</h2>
+            <a id="show1">Show</a>
+        </div>
+        <div class="content" id="cont1" style="display:none;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <a id="hide1">Hide</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="header">
+            <h2>Why do we use it?</h2>
+            <a id="show2">Show</a>
+        </div>
+        <div class="content" id="cont2" style="display:none;">
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters...</p>
+            <a id="hide2">Hide</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="header">
+            <h2>Where does it come from?</h2>
+            <a id="show3">Show</a>
+        </div>
+        <div class="content" id="cont3" style="display:none;">
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text...</p>
+            <a id="hide3">Hide</a>
+        </div>
+    </div>
+
+    <script>
+        const show1 = document.getElementById('show1');
+        const hide1 = document.getElementById('hide1');
+        const cont1 = document.getElementById('cont1');
+        show1.addEventListener('click', ()=>{
+            cont1.style.display = 'block';
+            show1.style.display = 'none';
+            
+        })
+        hide1.addEventListener('click', ()=>{
+            cont1.style.display = 'none';
+            show1.style.display = 'block';
+            
+        })
+
+
+        const show2 = document.getElementById('show2');
+        const hide2 = document.getElementById('hide2');
+        const cont2 = document.getElementById('cont2');
+        show2.addEventListener('click', ()=>{
+            cont2.style.display = 'block';
+            show2.style.display = 'none';
+            
+        })
+        hide2.addEventListener('click', ()=>{
+            cont2.style.display = 'none';
+            show2.style.display = 'block';
+        })
+
+
+        const show3 = document.getElementById('show3');
+        const hide3 = document.getElementById('hide3');
+        const cont3 = document.getElementById('cont3');
+        show3.addEventListener('click', ()=>{
+            cont3.style.display = 'block';
+            show3.style.display = 'none';
+            
+        })
+        hide3.addEventListener('click', ()=>{
+            cont3.style.display = 'none';
+            show3.style.display = 'block';
+            
+        })
+    </script>
+
+    
+    
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 4</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        
+        .toolbar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        #text-area {
+            width: 600px;
+            height: 150px;
+            border: 1px solid black;
+            padding: 10px;
+            font-family: Arial;
+            font-size: 12pt;
+        }
+
+        label { margin-left: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="toolbar">
+        <select id="font-family">
+            <option value="Arial">Arial</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Courier New">Courier New</option>
+        </select>
+
+        <select id="font-size">
+            <option value="12pt">12pt</option>
+            <option value="14pt">14pt</option>
+            <option value="18pt">18pt</option>
+            <option value="24pt">24pt</option>
+        </select>
+
+        <div>
+            <span>Italic</span>
+            <input type="checkbox" id="italic-check">
+        </div>
+
+        <div>
+            <span>Bold</span>
+            <input type="checkbox" id="bold-check">
+        </div>
+
+        <div>
+            <span>Underline</span>
+            <input type="checkbox" id="underline-check">
+        </div>
+    </div>
+
+    <textarea id="text-area">The quick brown fox jumps over the lazy dog</textarea>
+
+    <script>
+        const textValue = document.getElementById('text-area');
+        const italic = document.getElementById('italic-check');
+        const bold = document.getElementById('bold-check');
+        const underLine = document.getElementById('underline-check');
+        const fontSize = document.getElementById('font-size');
+        const fontFamily = document.getElementById('font-family');
+
+        fontFamily.addEventListener('change', (e)=>{
+            const selectedValue = e.target.value;
+            textValue.style.fontFamily= selectedValue;
+        });
+
+        fontSize.addEventListener('change', (e)=>{
+            const selectedValue = e.target.value;
+            textValue.style.fontSize= selectedValue;
+        });
+
+        italic.addEventListener('click',(e)=>{
+            const selectedValue = e.target;
+
+            if (selectedValue.checked){
+                textValue.style.fontStyle = "italic";
+            }else{
+                textValue.style.fontStyle = "normal";
+            }
+        });
+
+        bold.addEventListener('click',(e)=>{
+            const selectedValue = e.target;
+
+            if (selectedValue.checked){
+                textValue.style.fontWeight = "bold";
+            }else{
+                textValue.style.fontWeight = "normal";
+            }
+        });
+
+
+        underLine.addEventListener('click',(e)=>{
+            const selectedValue = e.target;
+
+            if (selectedValue.checked){
+                textValue.style.textDecoration = "underline";
+            }else{
+                textValue.style.textDecoration = "normal";
+            }
+        }); 
+    </script>
+</body>
+</html>
